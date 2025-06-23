@@ -4,7 +4,7 @@ declare(strict_types=1);
 use Src\Utils\Router;
 
 session_start();
-spl_autoload_register(function ($class) {
+spl_autoload_register(static function ($class) {
     $prefix = 'Src\\';
     $base_dir = __DIR__ . '/../src/';
 

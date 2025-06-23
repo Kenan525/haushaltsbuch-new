@@ -24,6 +24,7 @@ class AdminController extends AbstractController
 
         $users = $this->adminService->all();
         $this->view->render('admin/users', [
+            'user' => $this->auth->user(),
             'users' => $users,
             'isLoggedIn' => $this->auth->check(),
         ]);
@@ -58,6 +59,7 @@ class AdminController extends AbstractController
         $categoryStats = $this->adminService->getCategoryStats();
 
         $this->view->render('admin/statistics', [
+            'user' =>  $this->auth->user(),
             'stat' => $stat,
             'totalUsers' => $totalUsers,
             'categoryStats' => $categoryStats,
